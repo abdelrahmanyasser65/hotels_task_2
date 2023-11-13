@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/widgets/custom_text.dart';
@@ -26,10 +28,34 @@ final int index;
         children: [
           Row(
             children: [
-              Container(
-                height: 1.5.h,width: 10.h,
-                color: Colors.red,
-              ),
+              RatingBar(
+                  initialRating:hotelsModel[index].starts.toDouble(),
+                  //direction: _isVertical ? Axis.vertical : Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 5,
+                  itemSize: 3.w,
+                  itemPadding:
+                  EdgeInsets.symmetric(horizontal: 0.4.w),
+
+                  ratingWidget: RatingWidget(
+                    full: Image.asset(
+                      'assets/images/star.png',
+                      width: 2.h,
+                      height: 2.h,
+                    ),
+                    half:  Image.asset(
+                      'assets/images/star.png',
+                      width: 2.h,
+                      height: 2.h,
+                    ),
+                    empty: Image.asset(
+                      'assets/images/star.png',
+                      width: 2.h,
+                      height: 2.h,
+                      color: Colors.grey,
+
+                    ),
+                  ), onRatingUpdate: (double value) {  },),
               SizedBox(width: 0.5.h,),
               CustomText(
                 text: "Hotel",

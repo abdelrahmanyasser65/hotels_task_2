@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:hotels_task2/features/presentation/views/widget/filters_bottom_sheet.dart';
 import 'package:hotels_task2/features/presentation/views/widget/sort_bottom_sheet.dart';
 import 'package:sizer/sizer.dart';
 
@@ -15,8 +16,20 @@ buildAppBar(context){
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           InkWell(
-            onTap: (){
+            onTap: () {
+              showModalBottomSheet(
+                  context: context,
 
+                  shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20),
+                      )),
+                  isScrollControlled: true,
+
+                  builder: (context) {
+                    return const FiltersBottomSheet();
+                  });
             },
             child: Row(
               children: [

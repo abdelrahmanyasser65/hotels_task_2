@@ -14,7 +14,7 @@ final int index;
       padding: EdgeInsets.symmetric(
           vertical: 1.5.h,
           horizontal:2.h),
-      height: 29.h,
+      height: 30.h,
       width: double.infinity,
       decoration:const BoxDecoration(
           color: Colors.white,
